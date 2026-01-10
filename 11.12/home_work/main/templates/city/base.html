@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8">
+  <title>{{ title }}</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 24px; }
+    nav { margin-bottom: 16px; }
+    nav a { margin-right: 12px; text-decoration: none; }
+    .card { padding: 16px; border: 1px solid #ddd; border-radius: 10px; }
+  </style>
+</head>
+<body>
+
+  <nav>
+    {% for text, url_name in nav %}
+      <a href="{% url url_name %}">{{ text }}</a>
+    {% endfor %}
+  </nav>
+
+  <div class="card">
+    <h1>{{ title }}</h1>
+    {% block content %}{% endblock %}
+  </div>
+
+</body>
+</html>

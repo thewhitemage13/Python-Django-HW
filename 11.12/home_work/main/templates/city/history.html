@@ -1,0 +1,8 @@
+{% extends "city/base.html" %}
+{% block content %}
+<p>Загальна історія міста...</p>
+<ul>
+  <li><a href="{% url 'history_people' %}">Відомі мешканці</a></li>
+  <li><a href="{% url 'history_photos' %}">Історичні фотографії</a></li>
+</ul>
+{% endblock %}
