@@ -1,0 +1,27 @@
+{% load static %}
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{% block title %}HW20{% endblock %}</title>
+  <link rel="stylesheet" href="{% static 'css/site.css' %}">
+</head>
+<body class="{% block body_class %}{% endblock %}">
+  <header class="container">
+    <nav class="nav">
+      <a href="/">Song EN</a>
+      <a href="/fr/">FR</a>
+      <a href="/de/">DE</a>
+      <a href="/es/">ES</a>
+      <a href="/cars/">Cars</a>
+      <a href="/weekday/">Weekday</a>
+      <a href="/headphones/">Headphones</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    {% block content %}{% endblock %}
+  </main>
+</body>
+</html>

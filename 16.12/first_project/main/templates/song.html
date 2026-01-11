@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %}Song ({{ lang|upper }}){% endblock %}
+
+{% block content %}
+  <h1>Рядок з пісні ({{ lang|upper }})</h1>
+
+  <blockquote class="quote">
+    {% for line in lines %}
+      <div>{{ line }}</div>
+    {% endfor %}
+  </blockquote>
+
+  <p class="muted">{{ author }}, <strong>{{ title }}</strong></p>
+{% endblock %}

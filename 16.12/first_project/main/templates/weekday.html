@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block title %}Weekday{% endblock %}
+{% block body_class %}day-{{ css_class }}{% endblock %}
+
+{% block content %}
+  <h1>Поточний день тижня</h1>
+  <div class="big">{{ weekday_name }}</div>
+  <p class="muted">Дата: {{ date }}</p>
+{% endblock %}

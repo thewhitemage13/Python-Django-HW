@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block title %}Headphones{% endblock %}
+
+{% block content %}
+  <h1>Інформація про навушники</h1>
+
+  {% if model is None %}
+    <p>Передай модель у рядку пошуку, наприклад:</p>
+    <pre>/headphones/?model=budslive</pre>
+    <p>Доступні моделі: <strong>{{ available|join:", " }}</strong></p>
+
+  {% elif not_found %}
+    <p class="error">Модель "{{ model }}" не знайдена.</p>
+    <p>Доступні моделі: <strong>{{ available|join:", " }}</strong></p>
+
+  {% else %}
+    <h2>{{ info.name }}</h2>
+    <p><strong>Тип:</strong> {{ info.type }}</p>
+    <p><strong>Особливості:</strong></p>
+    <ul>
+      {% for f in info.features %}
+        <li>{{ f }}</li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+{% endblock %}
