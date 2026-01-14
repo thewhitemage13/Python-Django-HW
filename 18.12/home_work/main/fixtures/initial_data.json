@@ -1,0 +1,60 @@
+[
+  {
+    "model": "main.reader",
+    "pk": 1,
+    "fields": {
+      "first_name": "Иван",
+      "last_name": "Петров",
+      "phone": "+380501112233",
+      "email": "ivan.petrov@example.com",
+      "joined_at": "2026-01-01"
+    }
+  },
+  {
+    "model": "main.reader",
+    "pk": 2,
+    "fields": {
+      "first_name": "Анна",
+      "last_name": "Коваль",
+      "phone": "+380671234567",
+      "email": "anna.koval@example.com",
+      "joined_at": "2026-01-05"
+    }
+  },
+  {
+    "model": "main.book",
+    "pk": 1,
+    "fields": {
+      "title": "Мастер и Маргарита",
+      "author": "Михаил Булгаков",
+      "year": 1967,
+      "style": "Роман",
+      "publisher": "Азбука",
+      "is_available": true
+    }
+  },
+  {
+    "model": "main.book",
+    "pk": 2,
+    "fields": {
+      "title": "1984",
+      "author": "Джордж Оруэлл",
+      "year": 1949,
+      "style": "Антиутопия",
+      "publisher": "Penguin",
+      "is_available": false
+    }
+  },
+  {
+    "model": "main.book",
+    "pk": 3,
+    "fields": {
+      "title": "Ведьмак: Последнее желание",
+      "author": "Анджей Сапковский",
+      "year": 1993,
+      "style": "Фэнтези",
+      "publisher": "АСТ",
+      "is_available": true
+    }
+  }
+]
