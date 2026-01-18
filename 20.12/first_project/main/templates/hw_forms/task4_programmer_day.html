@@ -1,0 +1,14 @@
+{% extends "hw_forms/base.html" %}
+{% block content %}
+<h2>Завдання 4: День програміста</h2>
+
+<form method="post">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit">Порахувати</button>
+</form>
+
+{% if result %}
+  <p><b>Результат:</b> {{ result }}</p>
+{% endif %}
+{% endblock %}

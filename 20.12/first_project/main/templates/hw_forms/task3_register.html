@@ -1,0 +1,24 @@
+{% extends "hw_forms/base.html" %}
+{% block content %}
+<h2>Завдання 3: Реєстрація в інтернет-магазині</h2>
+
+<form method="post">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit">Зареєструватися</button>
+</form>
+
+{% if data %}
+  <hr>
+  <h3>Отримані дані</h3>
+  <ul>
+    <li><b>Ім'я:</b> {{ data.first_name }}</li>
+    <li><b>Прізвище:</b> {{ data.last_name }}</li>
+    <li><b>Вік:</b> {{ data.age }}</li>
+    <li><b>Email:</b> {{ data.email }}</li>
+    <li><b>Стать:</b> {{ data.gender }}</li>
+    <li><b>Адреса:</b> {{ data.address }}</li>
+    <li><b>Підписка:</b> {% if data.subscribe %}Так{% else %}Ні{% endif %}</li>
+  </ul>
+{% endif %}
+{% endblock %}

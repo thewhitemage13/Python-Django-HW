@@ -1,0 +1,14 @@
+{% extends "hw_forms/base.html" %}
+{% block content %}
+<h2>Завдання 2: Три числа</h2>
+
+<form method="post">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit">Submit</button>
+</form>
+
+{% if answer is not None %}
+  <p><b>Результат:</b> {{ answer }}</p>
+{% endif %}
+{% endblock %}

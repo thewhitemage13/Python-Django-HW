@@ -1,0 +1,14 @@
+{% extends "hw_forms/base.html" %}
+{% block content %}
+<h2>Завдання 1: Вхід</h2>
+
+<form method="post">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit">Увійти</button>
+</form>
+
+{% if result %}
+  <p><b>{{ result.message }}</b></p>
+{% endif %}
+{% endblock %}
