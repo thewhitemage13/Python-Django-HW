@@ -1,0 +1,26 @@
+{% extends "library/base.html" %}
+{% block title %}{{ reader.first_name }} {{ reader.last_name }}{% endblock %}
+
+{% block content %}
+<div class="card p-4">
+  <h2 class="mb-1">{{ reader.first_name }} {{ reader.last_name }}</h2>
+  <div class="text-muted">Дата регистрации: {{ reader.joined_at }}</div>
+
+  <hr>
+
+  <div class="row g-3">
+    <div class="col-md-6">
+      <div class="text-muted">Телефон</div>
+      <div class="fw-semibold">{{ reader.phone }}</div>
+    </div>
+    <div class="col-md-6">
+      <div class="text-muted">Email</div>
+      <div class="fw-semibold">{{ reader.email }}</div>
+    </div>
+  </div>
+
+  <div class="mt-4">
+    <a class="btn btn-outline-dark" href="{% url 'library:reader_list' %}">← Назад</a>
+  </div>
+</div>
+{% endblock %}
