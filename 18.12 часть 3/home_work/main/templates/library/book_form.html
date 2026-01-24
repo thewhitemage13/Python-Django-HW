@@ -1,0 +1,18 @@
+{% extends "library/base.html" %}
+{% block title %}{% if object %}Редактировать книгу{% else %}Добавить книгу{% endif %}{% endblock %}
+
+{% block content %}
+<div class="card p-4">
+  <h3 class="mb-3">{% if object %}Редактировать книгу{% else %}Добавить книгу{% endif %}</h3>
+
+  <form method="post" novalidate>
+    {% csrf_token %}
+    {{ form.as_p }}
+
+    <div class="d-flex gap-2">
+      <button class="btn btn-dark" type="submit">Сохранить</button>
+      <a class="btn btn-outline-secondary" href="{% url 'library:book_list' %}">Отмена</a>
+    </div>
+  </form>
+</div>
+{% endblock %}
