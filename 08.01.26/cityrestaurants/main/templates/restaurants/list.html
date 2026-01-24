@@ -1,0 +1,25 @@
+<h1>Рестораны города</h1>
+
+<form method="get">
+  <input type="text" name="spec" placeholder="Поиск по специализации" value="{{ spec }}">
+  <button type="submit">Найти</button>
+  <a href="{% url 'restaurant_list' %}">Сброс</a>
+</form>
+
+<p><a href="{% url 'restaurant_create' %}">+ Добавить ресторан</a></p>
+
+<ul>
+  {% for r in restaurants %}
+    <li>
+      <b>{{ r.name }}</b> — {{ r.specialization }}<br>
+      Адрес: {{ r.address }}<br>
+      Сайт: {% if r.website %}<a href="{{ r.website }}">{{ r.website }}</a>{% else %}—{% endif %}<br>
+      Телефон: {{ r.phone }}<br>
+      <a href="{% url 'restaurant_update' r.pk %}">Редактировать</a> |
+      <a href="{% url 'restaurant_delete' r.pk %}">Удалить</a>
+    </li>
+    <hr>
+  {% empty %}
+    <li>Ничего не найдено.</li>
+  {% endfor %}
+</ul>

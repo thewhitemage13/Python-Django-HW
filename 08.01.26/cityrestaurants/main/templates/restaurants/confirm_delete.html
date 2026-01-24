@@ -1,0 +1,9 @@
+<h1>Удалить ресторан</h1>
+
+<p>Точно удалить: <b>{{ restaurant.name }}</b>?</p>
+
+<form method="post">
+  {% csrf_token %}
+  <button type="submit">Да, удалить</button>
+  <a href="{% url 'restaurant_list' %}">Отмена</a>
+</form>

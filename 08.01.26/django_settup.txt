@@ -1,0 +1,15 @@
+1. ctrl+shift+p -> select python interpr... -> install venv
+2. is allready activated
+3. install django: python -m pip install django 
+4. create project: django-admin startproject first_project
+5. start project: python manage.py runserver
+6. create app: python manage.py startapp main
+
+7. pip freeze > requirements.txt Создание файла requirements.txt для быстрого сохранения всего, что было установлено
+8. pip install -r requirements.txt Для воссоздания всего, что было создано
+
+python manage.py makemigrations
+9. python manage.py migrate создание миграция (хотябы для того, чтобы создать суперюзера)
+10. python manage.py createsuperuser создание суперюззера
+
+Done!
