@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>{{ reader }}</h2>
+<p>Телефон: {{ reader.phone }}</p>
+<p>Email: {{ reader.email }}</p>
+<p>Дата запису: {{ reader.joined_at }}</p>
+
+<h3>Взяті книги (активні)</h3>
+<ul>
+  {% for b in reader.borrows.all %}
+    {% if not b.returned_at %}
+      <li>{{ b.book.title }} (з {{ b.borrowed_at }})</li>
+    {% endif %}
+  {% empty %}
+    <li>Немає видач</li>
+  {% endfor %}
+</ul>
+{% endblock %}

@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8">
+  <title>Бібліотека</title>
+</head>
+<body>
+  <div>
+    {% if user.is_authenticated %}
+      Привіт, {{ user.username }} |
+      <a href="{% url 'logout' %}">Вийти</a>
+    {% else %}
+      <a href="{% url 'login' %}">Увійти</a>
+    {% endif %}
+  </div>
+  <hr>
+  <nav>
+    <a href="{% url 'library:book_list' %}">Усі книги</a> |
+    <a href="{% url 'library:book_list_available' %}">Книги в наявності</a> |
+    <a href="{% url 'library:reader_list' %}">Читачі</a>
+  </nav>
+  <hr>
+  {% block content %}{% endblock %}
+</body>
+</html>

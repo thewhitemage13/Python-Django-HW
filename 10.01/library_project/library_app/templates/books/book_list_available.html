@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Книги в наявності</h2>
+<ul>
+  {% for book in books %}
+    <li>
+      <a href="{% url 'library:book_detail' book.pk %}">{{ book.title }}</a>
+      — {{ book.author }}
+    </li>
+  {% empty %}
+    <li>Немає доступних книг</li>
+  {% endfor %}
+</ul>
+{% endblock %}

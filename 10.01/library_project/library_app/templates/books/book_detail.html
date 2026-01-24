@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>{{ book.title }}</h2>
+<p>Автор: {{ book.author }}</p>
+<p>Рік: {{ book.publish_year }}</p>
+<p>Стиль: {{ book.style }}</p>
+<p>Видавництво: {{ book.publisher }}</p>
+
+<p>
+  Статус:
+  {% if book.is_available %}
+    В наявності
+  {% else %}
+    У читача
+  {% endif %}
+</p>
+{% endblock %}

@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Читачі</h2>
+<ul>
+  {% for r in readers %}
+    <li><a href="{% url 'library:reader_detail' r.pk %}">{{ r }}</a></li>
+  {% empty %}
+    <li>Немає читачів</li>
+  {% endfor %}
+</ul>
+{% endblock %}
